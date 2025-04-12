@@ -1,0 +1,17 @@
+<!-- select_date.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</form>
+
+{% endblock %}
+
